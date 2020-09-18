@@ -10,6 +10,13 @@ void reverseString(string& a) {
 	}
 
 }
+
+void pushZeros(string& min, string& max) {
+
+	for (long long int i = min.size(); i < max.size(); i++) {
+		min += '0';
+	}
+}
  
 int main() {
 	string minuend;
@@ -32,6 +39,11 @@ int main() {
 		maxString = subtrahend;
 		minString = minuend;
 	}
+
+	reverseString(maxString);
+	reverseString(minString);
+
+	pushZeros(minString, maxString);
 
 	return 0;
 }
